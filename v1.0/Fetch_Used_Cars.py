@@ -3,10 +3,20 @@
 # Website Link: https://mavericane.ir
 # Description: This file fetches the list of used cars from truecar.com according to the brand and name of the entered car and stores it in the database and table already created in the Create-Database.py program and saved on Database.py.
 # Importing required modules
+# requests module for fetching web contents into the program
 import requests
+
+# termcolor module for colorizing outputs
 import termcolor
+
+# mysql.connector module for connecting to the database and saving fetched data from the web
 import mysql.connector
+
+# re(regex) module for exact search of phrases in texts
 import re
+
+# bs4 module for classifying phrases fetched from websites
+from bs4 import BeautifulSoup
 
 # Checking if Database.py exists
 try:
@@ -20,7 +30,6 @@ except:
         )
     )
     exit()
-from bs4 import BeautifulSoup
 
 # Connecting to database
 try:
